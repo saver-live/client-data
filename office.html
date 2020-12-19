@@ -1,0 +1,245 @@
+<!DOCTYPE>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+		<title>DsoFramer Control Test Page (KB311765)</title>
+		
+		<style>
+			html, body
+			{    
+			    margin: 0px;
+			    height: 100%;
+			}
+			body
+			{    
+			    font-size: 65%;
+			    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;    
+			    text-align: center;
+			    background-color: #FFFFFF;
+			    background-attachment: scroll;
+			}
+			.fakehlink
+			{
+			    cursor: hand;
+			    text-decoration: underline;
+			    color: #0066CC;
+			    font-weight: normal;
+			    padding: 0px 0px 0px 9px;
+			}
+			#container{
+			    height: 100%;
+			}
+			
+			#logo
+			{
+			    width: 250px;
+			    height: 60px;
+			    float: left;
+			    margin: 0px 0px 2px 0px;
+			    background-color: #FFCC00;
+			}
+			#title
+			{
+			    height: 20px;
+			    min-width: 500px;
+			    line-height: 20px;
+			    text-align: right;
+			    background-color: #FFCC00;
+			}
+			#logo2
+			{
+			    height: 40px;
+			    margin: 0px 0px 2px 0px;
+			    text-align: right;
+			    background-color: #FFCC00;
+			}
+			#logo2 a img
+			{
+			    border: none;
+			}
+			#horizon
+			{
+			    height: 2px;
+			    margin: 0px 0px 5px 0px;
+			    background-color: #FFCC00;
+			}
+			#mainbody
+			{
+			    height: 85%;
+			}
+			#sidebar
+			{
+			    width: 175px;
+			    height: 336px;
+			    margin: 0px 0px 0px 10px;
+			    background-color: #f1f1f1;
+			    text-align: left;
+			    float: left;
+			}
+			#sidebarHeader
+			{
+			    height: 20px;
+			    width: 175px;
+			    background-color: #FFCC00;
+			}
+			#upperLeftCorner
+			{
+			    height: 10px;
+			    width: 10px;
+			    float: left;
+			}
+			#sidebarTitle1
+			{
+			    height: 10px;
+			    width: 155px;
+			    float: left;
+			    line-height: 20px;
+			}
+			#upperRightCorner
+			{
+			    height: 10px;
+			    width: 10px;
+			    background-color: #FFCC00;
+			    float: left;
+			    clear: right;
+			}
+			#borderLine
+			{
+			    width: 173px;
+			    height: 10px;
+			    border-style: none solid none solid;
+			    border-color: #D6D3D6;
+			    border-width: 1px;
+			    float: left;
+			    clear: right;
+			}
+			#sidebarContent
+			{
+			    width: 173px;
+			    height: 316px;
+			    border-style: none solid none solid;
+			    border-color: #D6D3D6;
+			    border-width: 1px;
+			    float: left;
+			}
+			#sidebarFooter
+			{
+			    width: 175px;
+			    height: 10px;
+			    float: left;
+			}
+			#sidebarTitle2, #sidebarTitle3
+			{
+			    width: 164px;
+			    height: 20px;
+			    line-height: 20px;
+			    padding: 0px 0px 0px 9px;
+			    background-color: #FFCC00;
+			}
+			#docControl
+			{
+			    height: 100%;
+			    margin: 0px 10px 0px 195px;
+			}
+			#copyright
+			{
+			    text-align: left;
+			}
+
+		</style>
+	</head>
+	<body onload="InitEvent()">
+		<div id="container">
+			<div id="header">
+				<div id="logo">
+					<img src="Image/officelogo.gif" alt="Microsoft(R) Office" /></div>
+				<div id="title">
+					DSO Framer ActiveX Document Control Sample &nbsp;</div>
+				<div id="logo2">
+					<a href="http://www.microsoft.com/">
+						<img src="Image/mslogo.gif" alt="microsoft.com" /></a></div>
+				<div id="horizon">
+				</div>
+			</div>
+			<div id="mainbody">
+				<div id="sidebar">
+					<div id="sidebarHeader">
+						<div id="upperLeftCorner">
+							<img src="Image/lefttopcurve.gif" /></div>
+						<div id="sidebarTitle1">
+							<b>Load a Document</b></div>
+						<div id="upperRightCorner">
+							<img src="Image/righttopcurve.gif" /></div>
+						<div id="borderLine">
+						</div>
+					</div>
+					<div id="sidebarContent">
+						<br />
+						<div class="fakehlink" onclick="NewDoc()">
+							Create a New Document</div>
+						<br />
+						<div class="fakehlink" onclick="OpenDoc()">
+							Open a Document</div>
+						<br />
+						<div class="fakehlink" onclick="OpenWebDoc()">
+							Open a Web Document</div>
+						<br />
+						<div id="sidebarTitle2">
+							<b>Perform Document Task</b>
+						</div>
+						<br />
+						<div class="fakehlink" onclick="SaveCopyDoc()">
+							Save a Copy</div>
+						<br />
+						<div class="fakehlink" onclick="ChgLayout()">
+							Change Page Layout</div>
+						<br />
+						<div class="fakehlink" onclick="PrintDoc()">
+							Print the Document</div>
+						<br />
+						<div class="fakehlink" onclick="CloseDoc()">
+							Close the Document</div>
+						<br />
+						<div id="sidebarTitle3">
+							<b>Control Appearance </b>
+						</div>
+						<br />
+						<div class="fakehlink" onclick="ToggleTitlebar()">
+							Show/Hide Titlebar</div>
+						<br />
+						<div class="fakehlink" onclick="ToggleToolbars()">
+							Show/Hide Toolbars</div>
+						<br />
+						<div class="fakehlink" onclick="ToggleMenubar()">
+							Show/Hide Menubar</div>
+						<br />
+					</div>
+					<div id="sidebarFooter">
+						<img src="Image/bottomcurve.gif" />
+					</div>
+				</div>
+				<div id="docControl">
+					<object classid="clsid:00460182-9E5E-11d5-B7C8-B8269041DD57" id="oframe" width="100%" height="100%" codebase="ActiveX/DSOframer/DSOframer.CAB#version=1,0,0,0">
+						<param name="BorderStyle" value="1">
+						<param name="TitlebarColor" value="52479">
+						<param name="TitlebarTextColor" value="0">
+						<param name="Menubar" value="1">
+					</object>
+					<!-- dsoframe事件 开始 -->
+					<script type="text/javascript" language="jscript" for="oframe" event="OnDocumentOpened(str,obj)">
+						OnDocumentOpened(str, obj);
+					</script>
+					<script type="text/javascript" language="jscript" for="oframe" event="OnDocumentClosed()">
+						OnDocumentClosed();
+					</script>
+					<!-- dsoframe事件 结束 -->
+					<div id="copyright">
+						Copyright (c)2001-2004 Microsoft Corporation. All rights reserved.
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
